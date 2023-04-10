@@ -1,5 +1,5 @@
 import { El } from '@/library/El';
-export const onBoarding = () => {
+export const onBoardingPageOne = () => {
   return El({
     element: 'div',
     className: 'h-screen w-screen flex flex-col justify-center items-center',
