@@ -7,6 +7,9 @@ export default {
         '100%': '100% 100%',
         16: '4rem',
       },
+      colors: {
+        dark: '#212529',
+      },
     },
   },
   plugins: [],

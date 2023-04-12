@@ -12,9 +12,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
 body {
   font-family: 'inter';
 }
-/* .hh {
-  filter: brightness(80%);
-} */
+.swiper-pagination-bullet {
+  color: black;
+  background-color: black;
+  width: 30px;
+  height: 3px;
+  border-radius: 10px;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
