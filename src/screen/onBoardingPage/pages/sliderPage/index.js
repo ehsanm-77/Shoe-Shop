@@ -1,3 +1,4 @@
+import { Router } from '@/library';
 import { El } from '@/library/El';
 import Swiper from 'swiper/bundle';
 
@@ -93,7 +94,7 @@ export const StartSlider = () => {
                   // Now you can use all slider methods like
                   swiper.slideNext();
                   if (e.target.innerText === 'Get Started') {
-                    Routes().navigate('/login');
+                    Router().navigate('/login');
                   }
                   swiper.activeIndex == 2
                     ? (e.target.innerText = 'Get Started')

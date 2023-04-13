@@ -1,5 +1,6 @@
 import { El } from '@/library/El';
 import { validateForm } from '@/library/validation';
+import { Router } from '@/library';
 
 export const auth = () => {
   setTimeout(() => {
@@ -38,14 +39,23 @@ export const auth = () => {
       validateForm();
     });
   }, 0);
+  console.log('hi auth');
   return El({
     element: 'div',
-    className: 'max-w-md h-full flex flex-col px-6 py-8 bg-white rounded-md',
+    className: 'max-w-md h-full flex flex-col px-6 py-8 bg-white mx-auto',
     children: [
       El({
         element: 'img',
         className: 'w-8 mb-16',
         src: './src/assets/img/left 1.svg',
+        eventListener: [
+          {
+            event: 'click',
+            callback: () => {
+              Router().navigate('/slider');
+            },
+          },
+        ],
       }),
       El({
         element: 'img',
