@@ -9,6 +9,7 @@ export default {
       },
       colors: {
         dark: '#212529',
+        authInput: '#FAFAFA',
       },
     },
   },

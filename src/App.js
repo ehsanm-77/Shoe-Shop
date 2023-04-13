@@ -8,6 +8,6 @@ export const app = () => {
   return El({
     element: 'div',
     className: 'h-full',
-    children: [StartSlider()],
+    children: [auth()],
   });
 };
