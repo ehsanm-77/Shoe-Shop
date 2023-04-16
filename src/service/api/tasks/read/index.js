@@ -8,6 +8,14 @@
 //   }
 // }
 
-// export const getJson = axios.create({
+// export const getProducts = axios.create({
 //   baseURL: 'http://localhost:3000',
 // });
+export async function getProducts(url, endpoint) {
+  try {
+    let data = await fetch(`${url}/${endpoint}`);
+    return await data.json();
+  } catch (error) {
+    console.log(error);
+  }
+}

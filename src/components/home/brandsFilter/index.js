@@ -11,7 +11,7 @@ const brands = [
   { name: 'Converse' },
 ];
 
-export const filterBrands = () => {
+export const brandsFilter = () => {
   const buttons = brands.map((brand) =>
     El({
       element: 'button',
@@ -33,7 +33,7 @@ export const filterBrands = () => {
     });
   };
 
-  handleClick(0); // Select the first button by default
+  handleClick(0);
 
   buttons.forEach((button, index) => {
     button.addEventListener('click', () => {

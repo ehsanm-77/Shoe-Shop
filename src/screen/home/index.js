@@ -1,7 +1,8 @@
 import { El } from '@/library';
-import { filterBrands } from '@/components/home';
+import { brandsFilter } from '@/components/home';
 import { footer } from '@/components/home';
 import { pruducts } from '@/components/home';
+// import { Router } from '@/library/routers';
 
 const brands = [
   'Adidas',
@@ -13,6 +14,7 @@ const brands = [
   'Converse',
   'More',
 ];
+
 export const home = () => {
   return El({
     element: 'div',
@@ -111,7 +113,7 @@ export const home = () => {
               El({
                 element: 'span',
                 className: ' whitespace-nowrap text-ellipsis',
-                children: brand.charAt(0).toUpperCase() + brand.slice(1),
+                children: [brand[0].toUpperCase(), ...brand.slice(1)].join(''),
               }),
             ],
           });
@@ -134,7 +136,7 @@ export const home = () => {
           }),
         ],
       }),
-      filterBrands(),
+      brandsFilter(),
       pruducts(),
       footer(),
     ],

@@ -1,43 +1,21 @@
 import { El } from '@/library/El';
+import { getProducts } from '@/service/api/tasks/read';
 
 export const pruducts = () => {
-  const items = [
-    {
-      imgSrc: './src/assets/img/products/shoe.png',
-      title: 'K-Swiss ista Train...',
-      price: '$ 85.00',
-    },
-    {
-      imgSrc: './src/assets/img/products/shoe.png',
-      title: 'K-Swiss ista Train...',
-      price: '$ 85.00',
-    },
-    {
-      imgSrc: './src/assets/img/products/shoe.png',
-      title: 'K-Swiss ista Train...',
-      price: '$ 85.00',
-    },
-    {
-      imgSrc: './src/assets/img/products/shoe.png',
-      title: 'K-Swiss ista Train...',
-      price: '$ 85.00',
-    },
-    {
-      imgSrc: './src/assets/img/products/shoe.png',
-      title: 'K-Swiss ista Train...',
-      price: '$ 85.00',
-    },
-    {
-      imgSrc: './src/assets/img/products/shoe.png',
-      title: 'K-Swiss ista Train...',
-      price: '$ 85.00',
-    },
-  ];
+  const elem = El({
+    element: 'div',
+  });
+  getProducts('http://localhost:3000', `Products`).then((res) => {
+    render(elem, res);
+  });
+  return elem;
+};
 
-  return El({
+export const render = (elem, data) => {
+  const el = El({
     element: 'div',
     className: 'flex flex-wrap justify-around items-center pl-2',
-    children: items.map((item) => {
+    children: data.map((item) => {
       return El({
         element: 'div',
         className: 'mb-16',
@@ -45,26 +23,28 @@ export const pruducts = () => {
           El({
             element: 'div',
             className:
-              'w-40 h-40 bg-gray-100 rounded-3xl flex justify-center items-center mb-3',
+              'w-40 h-40 bg-gray-100 !rounded-3xl  flex justify-center items-center mb-3  overflow-hidden',
             children: [
               El({
                 element: 'img',
-                src: item.imgSrc,
+                src: item.images,
               }),
             ],
           }),
           El({
             element: 'p',
             children: item.title,
-            className: 'font-bold text-lg mb-1',
+            className: 'font-bold text-lg mb-1 ml-5',
           }),
           El({
             element: 'span',
-            children: item.price,
-            className: 'font-medium text-base',
+            children: `$ ${item.price}`,
+            className: 'font-medium text-base ml-5',
           }),
+          El({ element: 'div', className: '', children: '' }),
         ],
       });
     }),
   });
+  return elem.append(el);
 };

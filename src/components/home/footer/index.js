@@ -12,7 +12,7 @@ export const footer = () => {
   const footerItems = icons.map((icon) => {
     return El({
       element: 'div',
-      className: 'flex flex-col',
+      className: 'flex flex-col items-center gap-1',
       children: [
         El({
           element: 'button',
