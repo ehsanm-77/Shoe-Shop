@@ -14,7 +14,6 @@ const brands = [
   'Converse',
   'More',
 ];
-
 export const home = () => {
   return El({
     element: 'div',
@@ -78,6 +77,7 @@ export const home = () => {
           El({
             element: 'input',
             type: 'text',
+            id: 'search-input',
             placeholder: 'Search',
             className:
               'py-2 w-full pl-10 bg-slate-50 placeholder:text-slate-300 text-slate-500 rounded border-none focus:border-none focus:outline-none',

@@ -1,12 +1,13 @@
 import { El } from '@/library/El';
+import { home } from '@/screen';
 import { getProducts } from '@/service/api/tasks/read';
 
 export const pruducts = () => {
   const elem = El({
     element: 'div',
   });
-  getProducts('http://localhost:3000', `Products`).then((res) => {
-    render(elem, res);
+  getProducts(`Products`).then((res) => {
+    render(elem, res.data);
   });
   return elem;
 };
